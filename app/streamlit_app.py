@@ -903,8 +903,9 @@ def page_hourly() -> None:
     ])
     st.success(
         "**Result.** Solar levels, timing and ramps are reproduced strongly at hourly resolution. Capacity "
-        "weighting improves wind level and correlation but does **not** solve the wind-ramp representation. No "
-        "observed values were used for fitting, scaling, calibration or threshold tuning."
+        "weighting improves wind level and correlation but does **not** solve the wind-ramp representation. "
+        "These hourly comparisons do not fit or scale the proxies to SMARD; notebook 04 explores a same-year "
+        "mean-ratio scaling separately as a diagnostic sensitivity experiment."
     )
 
     st.markdown(
