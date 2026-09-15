@@ -1,32 +1,21 @@
-# Germany 2018: Wind–Solar Complementarity and Low-Output Events
+# Germany 2018: Wind–Solar Complementarity and Low-Output Analysis
 
-A reproducible climate-data prototype that uses the DWD COSMO-REA6 regional reanalysis
-to study German wind and solar resource variability, complementarity, and sustained
-low-output events during 2018.
+A reproducible climate-data analysis of German wind and solar resource variability in 2018 using DWD COSMO-REA6 regional reanalysis, technology-specific capacity-factor proxies, installed-capacity weighting, and SMARD generation observations.
 
-**Status: analysis complete.** The repository contains seven executed notebooks: a reader-first
-summary (`00`), a July 2019 domain/source-QC pilot (`01`), the full-year 2018 daily analysis
-(`02`–`05`), and a November 2018 hourly case study (`06`), plus a small Streamlit demo in `app/`
-that reads only the committed compact assets.
+**Status: analysis complete.** The repository contains seven executed notebooks: a reader-first summary (`00`), a July 2019 domain/source-QC pilot (`01`), the full-year 2018 daily analysis (`02`–`05`), and a November 2018 hourly case study (`06`). A five-page Streamlit application in `app/` provides an interactive view of the main results using only compact committed assets.
 
-> **What this is:** weather-to-capacity-factor proxy modelling and validation against
-> observed national generation.  
-> **What this is not:** a bankable yield forecast, an operational power model, or an
-> electricity-system adequacy study.
+> **What this is:** weather-to-capacity-factor proxy modelling with comparison against observed national generation.
+> **What this is not:** a bankable yield forecast, an operational power model, or an electricity-system adequacy study.
 
 ## Why it matters
 
-Wind and solar are variable and partly anti-correlated. A resource proxy that tracks
-both together can reveal how often the combined resource falls to low levels, and how
-sensitive that result is to spatial and temporal representation.
+Wind and solar vary across different temporal and spatial patterns and can exhibit partial anti-correlation. Combining their resource signals can provide a useful diagnostic of complementarity and sustained low-output periods.
 
-This project asks one focused question:
+This project asks:
 
-> **How do German wind and solar resources complement each other, and how sensitive
-> are low-output events to (a) area vs. installed-capacity weighting and (b) daily
-> versus hourly resolution?**
+> **How do German wind and solar resources complement each other, and how sensitive are low-output diagnostics to (a) area versus installed-capacity weighting and (b) daily versus hourly resolution?**
 
-## The conceptual pipeline
+## Conceptual pipeline
 
 ```text
 DWD COSMO-REA6 (reanalysis weather)
@@ -50,83 +39,102 @@ resource proxy   modelled fleet proxy
    SMARD observed generation
           │
           ▼
-     validation & events
+     comparison & diagnostics
 ```
 
 Three representations are kept explicitly separate:
 
-| Layer | Meaning |
-|-------|---------|
-| **Area-weighted** | German land-area resource signal. |
-| **Capacity-weighted** | Weather/resource at mapped 2018 installed-capacity locations. |
-| **SMARD observed** | National grid-fed generation, normalised by year-end capacity. |
+| Representation        | Meaning                                                        |
+| --------------------- | -------------------------------------------------------------- |
+| **Area-weighted**     | German land-area resource signal.                              |
+| **Capacity-weighted** | Weather/resource at mapped 2018 installed-capacity locations.  |
+| **SMARD observed**    | National grid-fed generation, normalised by year-end capacity. |
 
-## Key results (2018)
+## Key results
 
-- **Wind and solar CF proxies are anti-correlated on daily time scales**, so a 50/50
-  capacity portfolio is smoother than either source alone.
-- **Capacity weighting strongly improves wind mean bias** relative to SMARD
-  (daily: −0.039 → +0.011; hourly: −0.040 → +0.016) but does not uniformly improve
-  MAE/RMSE or hourly wind ramps.
-- **Hourly processing reveals diurnal solar structure and wind ramps** that daily
-  averages hide. Solar ramp timing is captured well; hourly wind ramps remain weak
-  (r ≈ 0.18–0.24).
-- **Low-output screening depends on threshold and weighting.** Area weighting finds
-  more low-output hours; capacity weighting is more selective. Neither is an
-  electricity-shortage assessment.
+* Wind and solar CF proxies show partial anti-correlation on daily time scales, so a hypothetical 50/50 equal-capacity portfolio is smoother than either source alone.
+* Capacity weighting substantially improves the wind mean bias relative to SMARD, from **−0.039 to +0.011** in the daily analysis. It does not, however, improve every validation metric.
+* Solar shows stronger agreement with observed generation than wind in the analysed daily and hourly data.
+* Hourly analysis reveals diurnal solar behaviour and wind ramps that are less visible in daily averages. Solar ramp timing is captured well, while hourly wind-ramp correlation remains weak.
+* Low-output diagnostics depend on the threshold, duration definition, and spatial weighting. These are resource-screening diagnostics, not electricity-shortage or adequacy results.
 
-| Validation | Wind (r / bias / RMSE) | Solar (r / bias / RMSE) |
-|---|---|---|
-| Daily, area | 0.945 / −0.039 / 0.064 | 0.980 / +0.024 / 0.034 |
-| Daily, capacity | 0.940 / +0.011 / 0.067 | 0.983 / +0.024 / 0.033 |
-| Hourly (Nov), area | 0.877 / −0.040 / 0.078 | 0.968 / +0.005 / 0.018 |
-| Hourly (Nov), capacity | 0.886 / +0.016 / 0.082 | 0.969 / +0.006 / 0.019 |
+### Validation summary
+
+| Validation             | Wind (r / bias / RMSE) | Solar (r / bias / RMSE) |
+| ---------------------- | ---------------------- | ----------------------- |
+| Daily, area            | 0.945 / −0.039 / 0.064 | 0.980 / +0.024 / 0.034  |
+| Daily, capacity        | 0.940 / +0.011 / 0.067 | 0.983 / +0.024 / 0.033  |
+| Hourly (Nov), area     | 0.877 / −0.040 / 0.078 | 0.968 / +0.005 / 0.018  |
+| Hourly (Nov), capacity | 0.886 / +0.016 / 0.082 | 0.969 / +0.006 / 0.019  |
+
+The main result is that **moving from area weighting to installed-capacity weighting changes the representation of the renewable fleet and substantially reduces wind mean bias, but does not automatically improve all measures of agreement.**
 
 ## Data
 
-- **COSMO-REA6:** DWD regional atmospheric reanalysis (daily and hourly 2D fields).
-- **SMARD:** Bundesnetzagentur filters 4067 (onshore wind) and 4068 (PV), CC BY 4.0,
-  underlying data from ENTSO-E.
-- **OPSD plant register:** German renewable-power-plant locations and MW (used for
-  spatial capacity weighting, not as an independent generation record).
+* **COSMO-REA6:** DWD regional atmospheric reanalysis used for the weather fields.
+* **SMARD:** German electricity-market data from the Bundesnetzagentur, including onshore wind and PV generation. Relevant filters are 4067 (onshore wind) and 4068 (PV). SMARD data are provided under CC BY 4.0, with underlying data from ENTSO-E.
+* **OPSD plant register:** German renewable-power-plant locations and installed MW, used for spatial capacity weighting rather than as an independent generation record.
 
 ## Repository structure
 
 ```text
-notebooks/00_story_germany_2018.ipynb         <- start here
-notebooks/01_cosmo_rea6_domain_reference.ipynb     <- July 2019 pilot/QC reference
-notebooks/02_germany_2018_eda.ipynb
-notebooks/03_germany_2018_complementarity.ipynb
-notebooks/04_germany_2018_validation.ipynb
-notebooks/05_germany_2018_capacity_weighting.ipynb
-notebooks/06_germany_2018_hourly_case_study.ipynb
-app/streamlit_app.py                           <- five-page interactive demo (assets only)
-app_assets/2018/                               <- compact pre-computed products
-scripts/                                       <- live pipelines and generators
-src/cosmo_rea6_pipeline.py                     <- shared pipeline module
+notebooks/
+├── 00_story_germany_2018.ipynb
+├── 01_cosmo_rea6_domain_reference.ipynb
+├── 02_germany_2018_eda.ipynb
+├── 03_germany_2018_complementarity.ipynb
+├── 04_germany_2018_validation.ipynb
+├── 05_germany_2018_capacity_weighting.ipynb
+└── 06_germany_2018_hourly_case_study.ipynb
+
+app/
+└── streamlit_app.py
+
+app_assets/2018/
+└── compact pre-computed products
+
+scripts/
+└── analysis and notebook-generation scripts
+
+src/
+└── cosmo_rea6_pipeline.py
 ```
 
-## Live demo (Streamlit)
+**Start here:** `notebooks/00_story_germany_2018.ipynb`
 
-The app mirrors Notebook 00: overview, daily proxies vs SMARD, complementarity and low-output
-screening with threshold/duration sliders, area vs capacity weighting, and the November 2018 hourly
-case study. It performs no downloads and no GRIB decoding.
+The `01` notebook is a July 2019 domain/source-QC pilot. The main analysis covers 2018 in notebooks `02`–`05`, followed by the November 2018 hourly case study in `06`.
+
+## Streamlit app
+
+The Streamlit application presents the main analysis through five pages:
+
+1. Overview
+2. Daily proxies vs. SMARD observations
+3. Wind–solar complementarity and low-output diagnostics
+4. Area vs. installed-capacity weighting
+5. November 2018 hourly analysis
+
+The app reads only the compact assets stored in `app_assets/2018/`. It does not download data or decode GRIB files at runtime.
+
+### Run locally
 
 ```bash
 pip install -r app/requirements.txt
 streamlit run app/streamlit_app.py
 ```
 
-To deploy on Streamlit Community Cloud, point it at `app/streamlit_app.py` and set
-`app/requirements.txt` as the dependency file.
+After deployment, the live Streamlit application can be linked here:
 
-## Reproduce
+**Live demo:** *add deployed Streamlit URL*
 
-With the conda environment or `requirements.txt`:
+## Reproduce the analysis
+
+The main analysis can be rebuilt using the conda environment or the provided requirements.
 
 ```bash
 conda env create -f environment.yml
 conda activate renewable-diagnostics
+
 python scripts/run_2018.py
 python scripts/smard_download.py
 python scripts/run_capacity_weighted_2018.py
@@ -135,7 +143,7 @@ python scripts/smard_hourly_download.py
 python scripts/validate_hourly_november_2018.py
 ```
 
-The notebooks can also be opened as pre-executed evidence without rebuilding:
+The executed notebooks can also be opened directly without rebuilding the analysis:
 
 ```bash
 jupyter lab notebooks/00_story_germany_2018.ipynb
@@ -143,8 +151,9 @@ jupyter lab notebooks/00_story_germany_2018.ipynb
 
 ## Reproducible notebooks
 
-All executed notebooks are generated from `scripts/create_*.py` so prose and code
-stay consistent. To regenerate:
+The executed notebooks are generated from Python scripts so that the notebook code and supporting text can be kept consistent.
+
+Relevant generation scripts include:
 
 ```bash
 python scripts/create_story_notebook.py
@@ -154,25 +163,38 @@ python scripts/create_germany_2018_notebooks.py
 python scripts/create_capacity_weighting_notebook.py
 ```
 
-## Main limitations
+## Method limitations
 
-- 10 m wind is extrapolated to 100 m with a generic power-law profile and a generic
-  turbine curve; actual plant hub heights, wakes, availability, and curtailment are
-  not modelled.
-- Solar conversion uses a simplified horizontal-panel, temperature-aware model without
-  tilt, orientation, snow, or inverter/clipping losses.
-- Validation is national and annual (daily) or one-month (hourly), not plant-level or
-  multi-year.
-- A 50/50 hybrid is a hypothetical equal-rated-capacity portfolio, not Germany's
-  actual historical mix.
+The capacity-factor calculations are simplified resource proxies and do not represent individual power plants.
+
+### Wind
+
+* 10 m wind is extrapolated to 100 m using a generic power-law profile.
+* A generic turbine power curve is used.
+* Actual plant hub heights, turbine specifications, wakes, availability, and curtailment are not modelled.
+
+### Solar
+
+* Solar conversion uses a simplified horizontal-panel, temperature-aware model.
+* Tilt, orientation, snow, inverter losses, and clipping are not modelled.
+
+### Validation and scope
+
+* Validation is against national generation rather than individual plants.
+* The daily analysis covers 2018.
+* The hourly analysis is a November 2018 case study, not a full-year hourly validation.
+* The 50/50 hybrid is a hypothetical equal-rated-capacity portfolio, not Germany's actual historical generation mix.
+* Low-output events are resource-screening diagnostics. Demand, storage, imports, transmission constraints, dispatchable generation, and electricity-system adequacy are not modelled.
+* One year of analysis should not be interpreted as a long-term climate climatology.
+
+## License and data attribution
+
+Code is released under the **MIT License**.
+
+* **SMARD:** Bundesnetzagentur | SMARD.de, CC BY 4.0.
+* **COSMO-REA6:** © Deutscher Wetterdienst (DWD), according to the applicable open-data terms.
+* **OPSD:** Open Data Commons Open Database License (ODbL).
 
 ## Roadmap
 
-- **Later:** extend the hourly pipeline to additional years if a use-case justifies it.
-
-## License
-
-Code is released under the MIT License.  
-SMARD data is attributed to **Bundesnetzagentur | SMARD.de, CC BY 4.0**.  
-COSMO-REA6 is © Deutscher Wetterdienst (DWD), open-data terms.  
-OPSD data is published under the Open Data Commons Open Database License (ODbL).
+* Extend the hourly analysis to additional years if a specific research or energy-system use case justifies it.
