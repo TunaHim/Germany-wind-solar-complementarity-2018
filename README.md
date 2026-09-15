@@ -2,7 +2,14 @@
 
 A reproducible climate-data analysis of German wind and solar resource variability in 2018 using DWD COSMO-REA6 regional reanalysis, technology-specific capacity-factor proxies, installed-capacity weighting, and SMARD generation observations.
 
-**Live demo:** [Germany 2018 Wind–Solar Complementarity Analysis](https://germany-wind-solar-complementarity-2018.streamlit.app/)
+**Quick links**
+
+* 🌐 **[Live Streamlit app](https://germany-wind-solar-complementarity-2018.streamlit.app/)**
+* 📓 **[Main analysis notebook (`00`)](notebooks/00_story_germany_2018.ipynb)**
+* 📊 **[Validation notebook (`04`)](notebooks/04_germany_2018_validation.ipynb)**
+* ⚡ **[Capacity-weighting notebook (`05`)](notebooks/05_germany_2018_capacity_weighting.ipynb)**
+* 🕐 **[Hourly case-study notebook (`06`)](notebooks/06_germany_2018_hourly_case_study.ipynb)**
+* 📁 **[All Jupyter notebooks](notebooks/)**
 
 **Status: analysis complete.** The repository contains seven executed notebooks: a reader-first summary (`00`), a July 2019 domain/source-QC pilot (`01`), the full-year 2018 daily analysis (`02`–`05`), and a November 2018 hourly case study (`06`). A five-page Streamlit application in `app/` provides an interactive view of the main results using only compact committed assets.
 
