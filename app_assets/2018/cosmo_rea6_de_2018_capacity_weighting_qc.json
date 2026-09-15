@@ -1,0 +1,31 @@
+{
+  "year": 2018,
+  "plant_snapshot": "operating at any time in 2018; static year snapshot",
+  "source": "https://data.open-power-system-data.org/renewable_power_plants/2020-08-25/renewable_power_plants_DE.csv",
+  "plant_records": {
+    "solar": 1724519,
+    "wind": 21511
+  },
+  "mapped_capacity_mw": {
+    "solar": 44008.608,
+    "wind": 42185.939
+  },
+  "published_end_2018_capacity_mw": {
+    "wind": 52565,
+    "solar": 45277
+  },
+  "mapped_capacity_coverage_fraction": {
+    "solar": 0.9720,
+    "wind": 0.8026
+  },
+  "occupied_grid_cells": {
+    "wind": 2376,
+    "solar": 5582
+  },
+  "daily_records": 365,
+  "mean_capacity_factor": {
+    "wind_cf_capacity_weighted": 0.204941,
+    "solar_cf_capacity_weighted": 0.128366,
+    "combined_cf_capacity_weighted": 0.166653
+  }
+}

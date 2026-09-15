@@ -1,0 +1,21 @@
+name: renewable-diagnostics
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - xarray
+  - netCDF4
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib-base
+  - cartopy
+  - jupyterlab
+  - ipython
+  - pyarrow
+  - cfgrib
+  - eccodes
+  - requests
+  - tqdm
+  - pytest

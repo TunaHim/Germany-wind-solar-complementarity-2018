@@ -1,0 +1,805 @@
+{
+  "version": "1.3",
+  "product": "DWD COSMO-REA6 hourly 2D monthly archives",
+  "source_urls": {
+    "T_2M": "https://opendata.dwd.de/climate_environment/REA/COSMO_REA6/hourly/2D/T_2M/T_2M.2D.201811.grb.bz2",
+    "ASWDIR_S": "https://opendata.dwd.de/climate_environment/REA/COSMO_REA6/hourly/2D/ASWDIR_S/ASWDIR_S.2D.201811.grb.bz2",
+    "ASWDIFD_S": "https://opendata.dwd.de/climate_environment/REA/COSMO_REA6/hourly/2D/ASWDIFD_S/ASWDIFD_S.2D.201811.grb.bz2",
+    "U_10M": "https://opendata.dwd.de/climate_environment/REA/COSMO_REA6/hourly/2D/U_10M/U_10M.2D.201811.grb.bz2",
+    "V_10M": "https://opendata.dwd.de/climate_environment/REA/COSMO_REA6/hourly/2D/V_10M/V_10M.2D.201811.grb.bz2"
+  },
+  "archive_fields": {
+    "T_2M": {
+      "records": 720,
+      "start_utc": "2018-11-01 01:00:00",
+      "end_utc": "2018-12-01 00:00:00",
+      "duplicates": 0,
+      "missing_timestamps": 0,
+      "monotonic": true,
+      "metadata": {
+        "GRIB_shortName": "2t",
+        "GRIB_name": "2 metre temperature",
+        "GRIB_stepType": "instant",
+        "GRIB_stepUnits": "1",
+        "GRIB_typeOfLevel": "heightAboveGround",
+        "units": "K",
+        "long_name": "2 metre temperature",
+        "standard_name": "air_temperature"
+      },
+      "resumed_subset": true,
+      "range": [
+        254.97779846191406,
+        296.388671875
+      ]
+    },
+    "ASWDIR_S": {
+      "records": 720,
+      "start_utc": "2018-11-01 01:00:00",
+      "end_utc": "2018-12-01 00:00:00",
+      "duplicates": 0,
+      "missing_timestamps": 0,
+      "monotonic": true,
+      "metadata": {
+        "GRIB_shortName": "ASWDIR_S",
+        "GRIB_name": "Downward direct short wave radiation flux at surface (mean over forecast time)",
+        "GRIB_stepType": "avg",
+        "GRIB_stepUnits": "1",
+        "GRIB_typeOfLevel": "surface",
+        "units": "W m-2",
+        "long_name": "Downward direct short wave radiation flux at surface (mean over forecast time)",
+        "standard_name": "unknown"
+      },
+      "resumed_subset": true,
+      "range": [
+        0.0,
+        336.25
+      ]
+    },
+    "ASWDIFD_S": {
+      "records": 720,
+      "start_utc": "2018-11-01 01:00:00",
+      "end_utc": "2018-12-01 00:00:00",
+      "duplicates": 0,
+      "missing_timestamps": 0,
+      "monotonic": true,
+      "metadata": {
+        "GRIB_shortName": "ASWDIFD_S",
+        "GRIB_name": "Downward diffusive short wave radiation flux",
+        "GRIB_stepType": "avg",
+        "GRIB_stepUnits": "1",
+        "GRIB_typeOfLevel": "surface",
+        "units": "W m-2",
+        "long_name": "Downward diffusive short wave radiation flux",
+        "standard_name": "unknown"
+      },
+      "resumed_subset": true,
+      "range": [
+        0.0,
+        359.55792236328125
+      ]
+    },
+    "U_10M": {
+      "records": 720,
+      "start_utc": "2018-11-01 01:00:00",
+      "end_utc": "2018-12-01 00:00:00",
+      "duplicates": 0,
+      "missing_timestamps": 0,
+      "monotonic": true,
+      "metadata": {
+        "GRIB_shortName": "10u",
+        "GRIB_name": "10 metre U wind component",
+        "GRIB_stepType": "instant",
+        "GRIB_stepUnits": "1",
+        "GRIB_typeOfLevel": "heightAboveGround",
+        "units": "m s**-1",
+        "long_name": "10 metre U wind component",
+        "standard_name": "eastward_wind"
+      },
+      "resumed_subset": true,
+      "range": [
+        -20.4232177734375,
+        16.145736694335938
+      ]
+    },
+    "V_10M": {
+      "records": 720,
+      "start_utc": "2018-11-01 01:00:00",
+      "end_utc": "2018-12-01 00:00:00",
+      "duplicates": 0,
+      "missing_timestamps": 0,
+      "monotonic": true,
+      "metadata": {
+        "GRIB_shortName": "10v",
+        "GRIB_name": "10 metre V wind component",
+        "GRIB_stepType": "instant",
+        "GRIB_stepUnits": "1",
+        "GRIB_typeOfLevel": "heightAboveGround",
+        "units": "m s**-1",
+        "long_name": "10 metre V wind component",
+        "standard_name": "northward_wind"
+      },
+      "resumed_subset": true,
+      "range": [
+        -12.572357177734375,
+        20.338211059570312
+      ]
+    }
+  },
+  "time_semantics": {
+    "timezone": "UTC stored as timezone-naive valid-time timestamps",
+    "archive_axis": "720 valid times from 2018-11-01 01:00 through 2018-12-01 00:00; for daily comparison, each timestamp is assigned to the one-hour interval ending at that time",
+    "interpretation": "Each hourly CF is treated as representative of the hour ending at its valid-time label.",
+    "radiation_caution": "Archive fields are hourly values. Instantaneous versus interval-average/accumulation semantics follow captured GRIB stepType metadata and are not assumed in advance."
+  },
+  "records": 720,
+  "date_range_utc": [
+    "2018-11-01 01:00:00",
+    "2018-12-01 00:00:00"
+  ],
+  "cadence": "1 hour",
+  "missing_values": 0,
+  "duplicate_timestamps": 0,
+  "cf_ranges": {
+    "wind_cf_area": [
+      0.01311427765606159,
+      0.6481948179649671
+    ],
+    "solar_cf_area": [
+      0.0,
+      0.3064059716029406
+    ],
+    "wind_cf_capacity": [
+      0.007394318020766039,
+      0.7780750338345284
+    ],
+    "solar_cf_capacity": [
+      0.0,
+      0.3119997401916925
+    ],
+    "hybrid_cf_area": [
+      0.006649532431170428,
+      0.39270659084736387
+    ],
+    "hybrid_cf_capacity": [
+      0.0036971590103830193,
+      0.4783741126914092
+    ]
+  },
+  "mask_coverage": {
+    "german_grid_cells": 9530
+  },
+  "weight_coverage": {
+    "wind": {
+      "mapped_capacity_mw": 42185.939297,
+      "finite_weight_coverage_min": 1.0,
+      "finite_weight_coverage_mean": 1.0,
+      "occupied_cells": 2376
+    },
+    "solar": {
+      "mapped_capacity_mw": 44008.6080157919,
+      "finite_weight_coverage_min": 1.0,
+      "finite_weight_coverage_mean": 1.0,
+      "occupied_cells": 5582
+    }
+  },
+  "daily_vs_existing_daily": {
+    "metrics": {
+      "wind_area": {
+        "n_days": 30,
+        "correlation": 0.9927241863727831,
+        "bias": 0.030645266565355357,
+        "mae": 0.030645266565355357,
+        "rmse": 0.03479597614231545
+      },
+      "wind_capacity": {
+        "n_days": 30,
+        "correlation": 0.9930687573005177,
+        "bias": 0.0326045335896136,
+        "mae": 0.0326045335896136,
+        "rmse": 0.03879598204114525
+      },
+      "solar_area": {
+        "n_days": 30,
+        "correlation": 0.9999947187798846,
+        "bias": -0.0002323196790454567,
+        "mae": 0.0002323196790454567,
+        "rmse": 0.00027731510114063003
+      },
+      "solar_capacity": {
+        "n_days": 30,
+        "correlation": 0.999994569798857,
+        "bias": -0.0002464762324782667,
+        "mae": 0.0002464762324782667,
+        "rmse": 0.0002929954387579931
+      },
+      "hybrid_area": {
+        "n_days": 30,
+        "correlation": 0.9923831574164618,
+        "bias": 0.015206473443154948,
+        "mae": 0.015206473443154948,
+        "rmse": 0.017288034018853062
+      },
+      "hybrid_capacity": {
+        "n_days": 30,
+        "correlation": 0.9927448530743418,
+        "bias": 0.01617902867856767,
+        "mae": 0.01617902867856767,
+        "rmse": 0.019285414064035326
+      }
+    },
+    "explanation": "Hourly-derived daily CF means need not match v1.2: conversion before temporal averaging is nonlinear, hourly and daily products may have different averaging/time conventions, and grid processing can differ."
+  },
+  "ramp_metrics": {
+    "wind_cf_area": {
+      "mean_absolute_hourly_ramp": 0.011123795090957605,
+      "max_up_ramp": 0.0885578433671999,
+      "max_down_ramp": -0.06262941244987796,
+      "p95_absolute_ramp": 0.02935478813725874
+    },
+    "solar_cf_area": {
+      "mean_absolute_hourly_ramp": 0.015351998913398583,
+      "max_up_ramp": 0.09418089580940703,
+      "max_down_ramp": -0.09987341995197602,
+      "p95_absolute_ramp": 0.06620968230393826
+    },
+    "wind_cf_capacity": {
+      "mean_absolute_hourly_ramp": 0.014511472599752771,
+      "max_up_ramp": 0.11802707336075846,
+      "max_down_ramp": -0.08095645061186474,
+      "p95_absolute_ramp": 0.04006924172245011
+    },
+    "solar_cf_capacity": {
+      "mean_absolute_hourly_ramp": 0.01564530352895204,
+      "max_up_ramp": 0.09658769136225681,
+      "max_down_ramp": -0.10136546250158217,
+      "p95_absolute_ramp": 0.06705425775354147
+    },
+    "hybrid_cf_area": {
+      "mean_absolute_hourly_ramp": 0.012608475911883407,
+      "max_up_ramp": 0.06495636137999802,
+      "max_down_ramp": -0.0655718261391876,
+      "p95_absolute_ramp": 0.04503237104880978
+    },
+    "hybrid_cf_capacity": {
+      "mean_absolute_hourly_ramp": 0.014170742810262744,
+      "max_up_ramp": 0.07289422584760208,
+      "max_down_ramp": -0.07414684672568451,
+      "p95_absolute_ramp": 0.04823830637525415
+    }
+  },
+  "low_output_screening": {
+    "area": {
+      "threshold": 0.1,
+      "low_hours": 401,
+      "runs": [
+        {
+          "start_utc": "2018-11-01 01:00:00",
+          "end_utc": "2018-11-01 08:00:00",
+          "duration_hours": 8,
+          "mean_cf": 0.04633219485559892,
+          "severity_cf_hours": 0.4293424411552087
+        },
+        {
+          "start_utc": "2018-11-01 15:00:00",
+          "end_utc": "2018-11-02 02:00:00",
+          "duration_hours": 12,
+          "mean_cf": 0.07379129742479222,
+          "severity_cf_hours": 0.3145044309024934
+        },
+        {
+          "start_utc": "2018-11-02 06:00:00",
+          "end_utc": "2018-11-02 07:00:00",
+          "duration_hours": 2,
+          "mean_cf": 0.09843550619303063,
+          "severity_cf_hours": 0.0031289876139387607
+        },
+        {
+          "start_utc": "2018-11-02 15:00:00",
+          "end_utc": "2018-11-03 08:00:00",
+          "duration_hours": 18,
+          "mean_cf": 0.022917820938916703,
+          "severity_cf_hours": 1.3874792230994994
+        },
+        {
+          "start_utc": "2018-11-03 15:00:00",
+          "end_utc": "2018-11-04 10:00:00",
+          "duration_hours": 20,
+          "mean_cf": 0.03455643703845526,
+          "severity_cf_hours": 1.308871259230895
+        },
+        {
+          "start_utc": "2018-11-04 14:00:00",
+          "end_utc": "2018-11-05 08:00:00",
+          "duration_hours": 19,
+          "mean_cf": 0.05561686662438523,
+          "severity_cf_hours": 0.8432795341366806
+        },
+        {
+          "start_utc": "2018-11-05 16:00:00",
+          "end_utc": "2018-11-06 08:00:00",
+          "duration_hours": 17,
+          "mean_cf": 0.052822625867285214,
+          "severity_cf_hours": 0.8020153602561514
+        },
+        {
+          "start_utc": "2018-11-06 16:00:00",
+          "end_utc": "2018-11-07 08:00:00",
+          "duration_hours": 17,
+          "mean_cf": 0.04788507556716401,
+          "severity_cf_hours": 0.8859537153582119
+        },
+        {
+          "start_utc": "2018-11-07 15:00:00",
+          "end_utc": "2018-11-08 09:00:00",
+          "duration_hours": 19,
+          "mean_cf": 0.0434079051034159,
+          "severity_cf_hours": 1.075249803035098
+        },
+        {
+          "start_utc": "2018-11-08 14:00:00",
+          "end_utc": "2018-11-09 09:00:00",
+          "duration_hours": 20,
+          "mean_cf": 0.029348833147378482,
+          "severity_cf_hours": 1.4130233370524303
+        },
+        {
+          "start_utc": "2018-11-09 15:00:00",
+          "end_utc": "2018-11-10 02:00:00",
+          "duration_hours": 12,
+          "mean_cf": 0.07203289086720144,
+          "severity_cf_hours": 0.3356053095935828
+        },
+        {
+          "start_utc": "2018-11-11 22:00:00",
+          "end_utc": "2018-11-12 08:00:00",
+          "duration_hours": 11,
+          "mean_cf": 0.06098000181458085,
+          "severity_cf_hours": 0.4292199800396107
+        },
+        {
+          "start_utc": "2018-11-12 16:00:00",
+          "end_utc": "2018-11-13 07:00:00",
+          "duration_hours": 16,
+          "mean_cf": 0.06551202606881429,
+          "severity_cf_hours": 0.5518075828989716
+        },
+        {
+          "start_utc": "2018-11-13 23:00:00",
+          "end_utc": "2018-11-14 09:00:00",
+          "duration_hours": 11,
+          "mean_cf": 0.06262920530849228,
+          "severity_cf_hours": 0.41107874160658503
+        },
+        {
+          "start_utc": "2018-11-14 14:00:00",
+          "end_utc": "2018-11-15 09:00:00",
+          "duration_hours": 20,
+          "mean_cf": 0.03244373364125801,
+          "severity_cf_hours": 1.35112532717484
+        },
+        {
+          "start_utc": "2018-11-15 15:00:00",
+          "end_utc": "2018-11-16 08:00:00",
+          "duration_hours": 18,
+          "mean_cf": 0.05963467210837467,
+          "severity_cf_hours": 0.7265759020492559
+        },
+        {
+          "start_utc": "2018-11-16 16:00:00",
+          "end_utc": "2018-11-16 17:00:00",
+          "duration_hours": 2,
+          "mean_cf": 0.09567789106566837,
+          "severity_cf_hours": 0.008644217868663276
+        },
+        {
+          "start_utc": "2018-11-17 02:00:00",
+          "end_utc": "2018-11-17 02:00:00",
+          "duration_hours": 1,
+          "mean_cf": 0.0970653240989357,
+          "severity_cf_hours": 0.002934675901064304
+        },
+        {
+          "start_utc": "2018-11-17 22:00:00",
+          "end_utc": "2018-11-18 08:00:00",
+          "duration_hours": 11,
+          "mean_cf": 0.07430529420965366,
+          "severity_cf_hours": 0.2826417636938098
+        },
+        {
+          "start_utc": "2018-11-21 17:00:00",
+          "end_utc": "2018-11-22 09:00:00",
+          "duration_hours": 17,
+          "mean_cf": 0.06872531928238737,
+          "severity_cf_hours": 0.5316695721994147
+        },
+        {
+          "start_utc": "2018-11-22 14:00:00",
+          "end_utc": "2018-11-23 10:00:00",
+          "duration_hours": 21,
+          "mean_cf": 0.042922191340694665,
+          "severity_cf_hours": 1.1986339818454124
+        },
+        {
+          "start_utc": "2018-11-23 14:00:00",
+          "end_utc": "2018-11-25 10:00:00",
+          "duration_hours": 45,
+          "mean_cf": 0.03852460219457039,
+          "severity_cf_hours": 2.7663929012443327
+        },
+        {
+          "start_utc": "2018-11-25 14:00:00",
+          "end_utc": "2018-11-26 02:00:00",
+          "duration_hours": 13,
+          "mean_cf": 0.07775628248909738,
+          "severity_cf_hours": 0.2891683276417343
+        },
+        {
+          "start_utc": "2018-11-26 15:00:00",
+          "end_utc": "2018-11-27 11:00:00",
+          "duration_hours": 21,
+          "mean_cf": 0.046801215971243745,
+          "severity_cf_hours": 1.1171744646038815
+        },
+        {
+          "start_utc": "2018-11-27 13:00:00",
+          "end_utc": "2018-11-28 08:00:00",
+          "duration_hours": 20,
+          "mean_cf": 0.04460014310678285,
+          "severity_cf_hours": 1.1079971378643432
+        },
+        {
+          "start_utc": "2018-11-30 15:00:00",
+          "end_utc": "2018-12-01 00:00:00",
+          "duration_hours": 10,
+          "mean_cf": 0.07566421874844022,
+          "severity_cf_hours": 0.2433578125155979
+        }
+      ],
+      "longest_run_hours": 45,
+      "event_window_2018_11_01_through_09": {
+        "low_hours": 161,
+        "runs": [
+          {
+            "start_utc": "2018-11-01 01:00:00",
+            "end_utc": "2018-11-01 08:00:00",
+            "duration_hours": 8,
+            "mean_cf": 0.04633219485559892,
+            "severity_cf_hours": 0.4293424411552087
+          },
+          {
+            "start_utc": "2018-11-01 15:00:00",
+            "end_utc": "2018-11-02 02:00:00",
+            "duration_hours": 12,
+            "mean_cf": 0.07379129742479222,
+            "severity_cf_hours": 0.3145044309024934
+          },
+          {
+            "start_utc": "2018-11-02 06:00:00",
+            "end_utc": "2018-11-02 07:00:00",
+            "duration_hours": 2,
+            "mean_cf": 0.09843550619303063,
+            "severity_cf_hours": 0.0031289876139387607
+          },
+          {
+            "start_utc": "2018-11-02 15:00:00",
+            "end_utc": "2018-11-03 08:00:00",
+            "duration_hours": 18,
+            "mean_cf": 0.022917820938916703,
+            "severity_cf_hours": 1.3874792230994994
+          },
+          {
+            "start_utc": "2018-11-03 15:00:00",
+            "end_utc": "2018-11-04 10:00:00",
+            "duration_hours": 20,
+            "mean_cf": 0.03455643703845526,
+            "severity_cf_hours": 1.308871259230895
+          },
+          {
+            "start_utc": "2018-11-04 14:00:00",
+            "end_utc": "2018-11-05 08:00:00",
+            "duration_hours": 19,
+            "mean_cf": 0.05561686662438523,
+            "severity_cf_hours": 0.8432795341366806
+          },
+          {
+            "start_utc": "2018-11-05 16:00:00",
+            "end_utc": "2018-11-06 08:00:00",
+            "duration_hours": 17,
+            "mean_cf": 0.052822625867285214,
+            "severity_cf_hours": 0.8020153602561514
+          },
+          {
+            "start_utc": "2018-11-06 16:00:00",
+            "end_utc": "2018-11-07 08:00:00",
+            "duration_hours": 17,
+            "mean_cf": 0.04788507556716401,
+            "severity_cf_hours": 0.8859537153582119
+          },
+          {
+            "start_utc": "2018-11-07 15:00:00",
+            "end_utc": "2018-11-08 09:00:00",
+            "duration_hours": 19,
+            "mean_cf": 0.0434079051034159,
+            "severity_cf_hours": 1.075249803035098
+          },
+          {
+            "start_utc": "2018-11-08 14:00:00",
+            "end_utc": "2018-11-09 09:00:00",
+            "duration_hours": 20,
+            "mean_cf": 0.029348833147378482,
+            "severity_cf_hours": 1.4130233370524303
+          },
+          {
+            "start_utc": "2018-11-09 15:00:00",
+            "end_utc": "2018-11-09 23:00:00",
+            "duration_hours": 9,
+            "mean_cf": 0.06490756456964149,
+            "severity_cf_hours": 0.3158319188732266
+          }
+        ]
+      }
+    },
+    "capacity": {
+      "threshold": 0.1,
+      "low_hours": 326,
+      "runs": [
+        {
+          "start_utc": "2018-11-01 01:00:00",
+          "end_utc": "2018-11-01 08:00:00",
+          "duration_hours": 8,
+          "mean_cf": 0.0639286832616055,
+          "severity_cf_hours": 0.2885705339071561
+        },
+        {
+          "start_utc": "2018-11-01 15:00:00",
+          "end_utc": "2018-11-01 20:00:00",
+          "duration_hours": 6,
+          "mean_cf": 0.06517284015427148,
+          "severity_cf_hours": 0.20896295907437118
+        },
+        {
+          "start_utc": "2018-11-02 16:00:00",
+          "end_utc": "2018-11-03 09:00:00",
+          "duration_hours": 18,
+          "mean_cf": 0.03268415253854218,
+          "severity_cf_hours": 1.2116852543062406
+        },
+        {
+          "start_utc": "2018-11-03 15:00:00",
+          "end_utc": "2018-11-04 09:00:00",
+          "duration_hours": 19,
+          "mean_cf": 0.04263149752875185,
+          "severity_cf_hours": 1.0900015469537152
+        },
+        {
+          "start_utc": "2018-11-04 15:00:00",
+          "end_utc": "2018-11-05 07:00:00",
+          "duration_hours": 17,
+          "mean_cf": 0.057551276863037945,
+          "severity_cf_hours": 0.7216282933283551
+        },
+        {
+          "start_utc": "2018-11-05 16:00:00",
+          "end_utc": "2018-11-06 08:00:00",
+          "duration_hours": 17,
+          "mean_cf": 0.055545395443153005,
+          "severity_cf_hours": 0.7557282774663991
+        },
+        {
+          "start_utc": "2018-11-06 15:00:00",
+          "end_utc": "2018-11-07 08:00:00",
+          "duration_hours": 18,
+          "mean_cf": 0.06372921203400234,
+          "severity_cf_hours": 0.6528741833879583
+        },
+        {
+          "start_utc": "2018-11-07 16:00:00",
+          "end_utc": "2018-11-08 09:00:00",
+          "duration_hours": 18,
+          "mean_cf": 0.06635318644690896,
+          "severity_cf_hours": 0.6056426439556389
+        },
+        {
+          "start_utc": "2018-11-08 14:00:00",
+          "end_utc": "2018-11-09 08:00:00",
+          "duration_hours": 19,
+          "mean_cf": 0.030451706093127792,
+          "severity_cf_hours": 1.321417584230572
+        },
+        {
+          "start_utc": "2018-11-09 16:00:00",
+          "end_utc": "2018-11-09 20:00:00",
+          "duration_hours": 5,
+          "mean_cf": 0.08087521722214645,
+          "severity_cf_hours": 0.09562391388926778
+        },
+        {
+          "start_utc": "2018-11-12 00:00:00",
+          "end_utc": "2018-11-12 08:00:00",
+          "duration_hours": 9,
+          "mean_cf": 0.06558700432295,
+          "severity_cf_hours": 0.30971696109345004
+        },
+        {
+          "start_utc": "2018-11-12 19:00:00",
+          "end_utc": "2018-11-13 05:00:00",
+          "duration_hours": 11,
+          "mean_cf": 0.07460741826619416,
+          "severity_cf_hours": 0.27931839907186434
+        },
+        {
+          "start_utc": "2018-11-14 02:00:00",
+          "end_utc": "2018-11-14 08:00:00",
+          "duration_hours": 7,
+          "mean_cf": 0.08261889373530605,
+          "severity_cf_hours": 0.12166774385285771
+        },
+        {
+          "start_utc": "2018-11-14 15:00:00",
+          "end_utc": "2018-11-15 09:00:00",
+          "duration_hours": 19,
+          "mean_cf": 0.03894462248659642,
+          "severity_cf_hours": 1.1600521727546682
+        },
+        {
+          "start_utc": "2018-11-15 15:00:00",
+          "end_utc": "2018-11-16 08:00:00",
+          "duration_hours": 18,
+          "mean_cf": 0.07492420881974388,
+          "severity_cf_hours": 0.4513642412446104
+        },
+        {
+          "start_utc": "2018-11-17 02:00:00",
+          "end_utc": "2018-11-17 02:00:00",
+          "duration_hours": 1,
+          "mean_cf": 0.09530537767681545,
+          "severity_cf_hours": 0.004694622323184558
+        },
+        {
+          "start_utc": "2018-11-17 21:00:00",
+          "end_utc": "2018-11-18 08:00:00",
+          "duration_hours": 12,
+          "mean_cf": 0.0652909757624645,
+          "severity_cf_hours": 0.41650829085042623
+        },
+        {
+          "start_utc": "2018-11-22 02:00:00",
+          "end_utc": "2018-11-22 08:00:00",
+          "duration_hours": 7,
+          "mean_cf": 0.09700068796246775,
+          "severity_cf_hours": 0.0209951842627258
+        },
+        {
+          "start_utc": "2018-11-22 16:00:00",
+          "end_utc": "2018-11-23 09:00:00",
+          "duration_hours": 18,
+          "mean_cf": 0.06293431320868369,
+          "severity_cf_hours": 0.6671823622436938
+        },
+        {
+          "start_utc": "2018-11-23 14:00:00",
+          "end_utc": "2018-11-24 11:00:00",
+          "duration_hours": 22,
+          "mean_cf": 0.04319047061270532,
+          "severity_cf_hours": 1.2498096465204829
+        },
+        {
+          "start_utc": "2018-11-24 14:00:00",
+          "end_utc": "2018-11-25 09:00:00",
+          "duration_hours": 20,
+          "mean_cf": 0.033457224202546924,
+          "severity_cf_hours": 1.3308555159490616
+        },
+        {
+          "start_utc": "2018-11-25 15:00:00",
+          "end_utc": "2018-11-25 18:00:00",
+          "duration_hours": 4,
+          "mean_cf": 0.0882665289805091,
+          "severity_cf_hours": 0.0469338840779636
+        },
+        {
+          "start_utc": "2018-11-26 16:00:00",
+          "end_utc": "2018-11-27 10:00:00",
+          "duration_hours": 19,
+          "mean_cf": 0.05146057933451965,
+          "severity_cf_hours": 0.922248992644127
+        },
+        {
+          "start_utc": "2018-11-27 14:00:00",
+          "end_utc": "2018-11-28 03:00:00",
+          "duration_hours": 14,
+          "mean_cf": 0.057379482354775746,
+          "severity_cf_hours": 0.5966872470331397
+        }
+      ],
+      "longest_run_hours": 22,
+      "event_window_2018_11_01_through_09": {
+        "low_hours": 145,
+        "runs": [
+          {
+            "start_utc": "2018-11-01 01:00:00",
+            "end_utc": "2018-11-01 08:00:00",
+            "duration_hours": 8,
+            "mean_cf": 0.0639286832616055,
+            "severity_cf_hours": 0.2885705339071561
+          },
+          {
+            "start_utc": "2018-11-01 15:00:00",
+            "end_utc": "2018-11-01 20:00:00",
+            "duration_hours": 6,
+            "mean_cf": 0.06517284015427148,
+            "severity_cf_hours": 0.20896295907437118
+          },
+          {
+            "start_utc": "2018-11-02 16:00:00",
+            "end_utc": "2018-11-03 09:00:00",
+            "duration_hours": 18,
+            "mean_cf": 0.03268415253854218,
+            "severity_cf_hours": 1.2116852543062406
+          },
+          {
+            "start_utc": "2018-11-03 15:00:00",
+            "end_utc": "2018-11-04 09:00:00",
+            "duration_hours": 19,
+            "mean_cf": 0.04263149752875185,
+            "severity_cf_hours": 1.0900015469537152
+          },
+          {
+            "start_utc": "2018-11-04 15:00:00",
+            "end_utc": "2018-11-05 07:00:00",
+            "duration_hours": 17,
+            "mean_cf": 0.057551276863037945,
+            "severity_cf_hours": 0.7216282933283551
+          },
+          {
+            "start_utc": "2018-11-05 16:00:00",
+            "end_utc": "2018-11-06 08:00:00",
+            "duration_hours": 17,
+            "mean_cf": 0.055545395443153005,
+            "severity_cf_hours": 0.7557282774663991
+          },
+          {
+            "start_utc": "2018-11-06 15:00:00",
+            "end_utc": "2018-11-07 08:00:00",
+            "duration_hours": 18,
+            "mean_cf": 0.06372921203400234,
+            "severity_cf_hours": 0.6528741833879583
+          },
+          {
+            "start_utc": "2018-11-07 16:00:00",
+            "end_utc": "2018-11-08 09:00:00",
+            "duration_hours": 18,
+            "mean_cf": 0.06635318644690896,
+            "severity_cf_hours": 0.6056426439556389
+          },
+          {
+            "start_utc": "2018-11-08 14:00:00",
+            "end_utc": "2018-11-09 08:00:00",
+            "duration_hours": 19,
+            "mean_cf": 0.030451706093127792,
+            "severity_cf_hours": 1.321417584230572
+          },
+          {
+            "start_utc": "2018-11-09 16:00:00",
+            "end_utc": "2018-11-09 20:00:00",
+            "duration_hours": 5,
+            "mean_cf": 0.08087521722214645,
+            "severity_cf_hours": 0.09562391388926778
+          }
+        ]
+      }
+    }
+  },
+  "event_window_note": "The original daily low-output event began 2018-10-31, outside this selected hourly archive. Hourly runs are screening intervals, not electricity shortages and not directly comparable with daily event counts.",
+  "storage_cleanup": {
+    "policy": "After all compact outputs and resumable DACH subsets validate, full compressed/decompressed hourly archives and index/partial files for the five known variables are evicted.",
+    "remaining_full_archives": [],
+    "temporary_subsets_retained_for_resume": [
+      "C:\\Users\\LENOVO\\eerie-dach-renewable-diagnostics\\data\\hourly_cache\\201811\\subsets\\T_2M.2D.201811.dach.nc",
+      "C:\\Users\\LENOVO\\eerie-dach-renewable-diagnostics\\data\\hourly_cache\\201811\\subsets\\ASWDIR_S.2D.201811.dach.nc",
+      "C:\\Users\\LENOVO\\eerie-dach-renewable-diagnostics\\data\\hourly_cache\\201811\\subsets\\ASWDIFD_S.2D.201811.dach.nc",
+      "C:\\Users\\LENOVO\\eerie-dach-renewable-diagnostics\\data\\hourly_cache\\201811\\subsets\\U_10M.2D.201811.dach.nc",
+      "C:\\Users\\LENOVO\\eerie-dach-renewable-diagnostics\\data\\hourly_cache\\201811\\subsets\\V_10M.2D.201811.dach.nc"
+    ]
+  }
+}

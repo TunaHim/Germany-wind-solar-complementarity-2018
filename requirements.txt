@@ -1,0 +1,24 @@
+# Core data & climate
+xarray==2024.9.0
+netCDF4==1.7.1
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.14.1
+cfgrib==0.9.14.1
+cftime==1.6.4
+
+# Geospatial
+cartopy==0.23.0
+shapely==2.0.6
+
+# Storage / IO
+pyarrow==18.1.0
+
+# Visualization
+matplotlib==3.11.1
+
+# Notebooks and utilities
+jupyter==1.1.1
+ipython==8.29.0
+tqdm==4.66.6
+requests==2.34.2

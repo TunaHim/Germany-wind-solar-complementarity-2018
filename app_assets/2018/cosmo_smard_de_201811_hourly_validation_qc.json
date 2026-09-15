@@ -1,0 +1,798 @@
+{
+  "records": 720,
+  "exact_matches": 720,
+  "missing_cosmo": 0,
+  "missing_smard": 0,
+  "duplicates": 0,
+  "start_interval_start_utc": "2018-11-01 00:00:00",
+  "end_interval_start_utc": "2018-11-30 23:00:00",
+  "alignment": "COSMO valid-time minus one hour equals timezone-naive UTC SMARD interval_start_utc; e.g. COSMO 2018-11-01 01:00 -> interval start 2018-11-01 00:00 UTC.",
+  "validation_metrics": {
+    "area": {
+      "wind": {
+        "n": 720,
+        "observed_mean": 0.21100594634156652,
+        "model_mean": 0.17084716724555002,
+        "correlation": 0.8766967099555723,
+        "bias_model_minus_observed": -0.04015877909601653,
+        "mae": 0.06364205921564942,
+        "rmse": 0.07837747573782881
+      },
+      "solar": {
+        "n": 720,
+        "observed_mean": 0.035647254983521184,
+        "model_mean": 0.04099458043199235,
+        "correlation": 0.968029362213491,
+        "bias_model_minus_observed": 0.005347325448471166,
+        "mae": 0.00880453857586872,
+        "rmse": 0.01839657272066828
+      },
+      "hybrid": {
+        "n": 720,
+        "observed_mean": 0.12332660066254383,
+        "model_mean": 0.10592087383877118,
+        "correlation": 0.8796377808111072,
+        "bias_model_minus_observed": -0.017405726823772682,
+        "mae": 0.03388141284072392,
+        "rmse": 0.041079586990791644
+      }
+    },
+    "capacity": {
+      "wind": {
+        "n": 720,
+        "observed_mean": 0.21100594634156652,
+        "model_mean": 0.22728582532824623,
+        "correlation": 0.8855207679434628,
+        "bias_model_minus_observed": 0.01627987898667973,
+        "mae": 0.06563382014034917,
+        "rmse": 0.08165280029864233
+      },
+      "solar": {
+        "n": 720,
+        "observed_mean": 0.035647254983521184,
+        "model_mean": 0.04173665037312624,
+        "correlation": 0.9685276566387442,
+        "bias_model_minus_observed": 0.0060893953896050505,
+        "mae": 0.008828793590534694,
+        "rmse": 0.018811125955062062
+      },
+      "hybrid": {
+        "n": 720,
+        "observed_mean": 0.12332660066254383,
+        "model_mean": 0.13451123785068625,
+        "correlation": 0.8990878188100606,
+        "bias_model_minus_observed": 0.01118463718814239,
+        "mae": 0.0357684037007317,
+        "rmse": 0.04540192644768812
+      }
+    }
+  },
+  "ramp_validation": {
+    "area": {
+      "wind": {
+        "n_ramps": 719,
+        "observed_mean_ramp": 9.328406832417733e-06,
+        "model_mean_ramp": 8.202033156314976e-05,
+        "ramp_correlation": 0.18099352399356514,
+        "ramp_bias_model_minus_observed": 7.269192473073239e-05,
+        "ramp_mae": 0.015142183799743648,
+        "ramp_rmse": 0.021394951430106272
+      },
+      "solar": {
+        "n_ramps": 719,
+        "observed_mean_ramp": 1.2287215004549977e-09,
+        "model_mean_ramp": 2.466974623346711e-19,
+        "ramp_correlation": 0.9637373430608803,
+        "ramp_bias_model_minus_observed": -1.2287215002372666e-09,
+        "ramp_mae": 0.003983586564751651,
+        "ramp_rmse": 0.00755329526174495
+      },
+      "hybrid": {
+        "n_ramps": 719,
+        "observed_mean_ramp": 4.664817776958929e-06,
+        "model_mean_ramp": 4.101016578157512e-05,
+        "ramp_correlation": 0.7970635100202267,
+        "ramp_bias_model_minus_observed": 3.634534800461599e-05,
+        "ramp_mae": 0.008392093180338412,
+        "ramp_rmse": 0.011862762416612277
+      }
+    },
+    "capacity": {
+      "wind": {
+        "n_ramps": 719,
+        "observed_mean_ramp": 9.328406832417733e-06,
+        "model_mean_ramp": 0.00014273538980259833,
+        "ramp_correlation": 0.2371113659494582,
+        "ramp_bias_model_minus_observed": 0.00013340698297018068,
+        "ramp_mae": 0.016561710191985473,
+        "ramp_rmse": 0.023297440948373018
+      },
+      "solar": {
+        "n_ramps": 719,
+        "observed_mean_ramp": 1.2287215004549977e-09,
+        "model_mean_ramp": 2.8884412536800885e-19,
+        "ramp_correlation": 0.9637629465101161,
+        "ramp_bias_model_minus_observed": -1.2287215002144215e-09,
+        "ramp_mae": 0.004042153145429679,
+        "ramp_rmse": 0.007651533216221689
+      },
+      "hybrid": {
+        "n_ramps": 719,
+        "observed_mean_ramp": 4.664817776958929e-06,
+        "model_mean_ramp": 7.136769490129904e-05,
+        "ramp_correlation": 0.8023762420888902,
+        "ramp_bias_model_minus_observed": 6.670287712434015e-05,
+        "ramp_mae": 0.009246590380077115,
+        "ramp_rmse": 0.012964321547963219
+      }
+    }
+  },
+  "solar_daylight_night": {
+    "definitions": {
+      "observed_daylight": "SMARD solar generation > 1 MWh",
+      "model_daylight": "corresponding model GHI > 0 W m-2"
+    },
+    "counts": {
+      "observed_daylight": 302,
+      "observed_night": 418,
+      "area_model_daylight": 363,
+      "capacity_model_daylight": 363,
+      "tiny_nonzero_observed_night_hours": 418
+    },
+    "metrics": {
+      "area": {
+        "observed_definition_daylight": {
+          "n": 302,
+          "observed_mean": 0.08496606174179923,
+          "model_mean": 0.09769685839885253,
+          "correlation": 0.9509970247326092,
+          "bias_model_minus_observed": 0.012730796657053301,
+          "mae": 0.020937826547443975,
+          "rmse": 0.028405183739677688
+        },
+        "observed_definition_night": {
+          "n": 418,
+          "observed_mean": 1.5007038545189088e-05,
+          "model_mean": 2.7862857849357737e-05,
+          "correlation": 0.33018221026230576,
+          "bias_model_minus_observed": 1.2855819304168647e-05,
+          "mae": 3.838315142918088e-05,
+          "rmse": 7.500162833150249e-05
+        },
+        "model_definition_daylight": {
+          "n": 363,
+          "observed_mean": 0.07069072767928498,
+          "model_mean": 0.08131156449320796,
+          "correlation": 0.9574260942721562,
+          "bias_model_minus_observed": 0.010620836813922993,
+          "mae": 0.01744897612691645,
+          "rmse": 0.025908948425367333
+        },
+        "model_definition_night": {
+          "n": 357,
+          "observed_mean": 1.4816360097498813e-05,
+          "model_mean": 0.0,
+          "correlation": null,
+          "bias_model_minus_observed": -1.4816360097498813e-05,
+          "mae": 1.4816360097498813e-05,
+          "rmse": 1.4911089730638742e-05
+        }
+      },
+      "capacity": {
+        "observed_definition_daylight": {
+          "n": 302,
+          "observed_mean": 0.08496606174179923,
+          "model_mean": 0.09946502396384393,
+          "correlation": 0.9520774567997503,
+          "bias_model_minus_observed": 0.014498962222044704,
+          "mae": 0.0209946506798563,
+          "rmse": 0.029045272350258895
+        },
+        "observed_definition_night": {
+          "n": 418,
+          "observed_mean": 1.5007038545189088e-05,
+          "model_mean": 2.8590984617283745e-05,
+          "correlation": 0.32953070256322725,
+          "bias_model_minus_observed": 1.3583946072094657e-05,
+          "mae": 3.910736810616427e-05,
+          "rmse": 7.704966358542443e-05
+        },
+        "model_definition_daylight": {
+          "n": 363,
+          "observed_mean": 0.07069072767928498,
+          "model_mean": 0.08278343875661404,
+          "correlation": 0.9582401185433592,
+          "bias_model_minus_observed": 0.012092711077329045,
+          "mae": 0.017497085246915078,
+          "rmse": 0.026492787708517745
+        },
+        "model_definition_night": {
+          "n": 357,
+          "observed_mean": 1.4816360097498813e-05,
+          "model_mean": 0.0,
+          "correlation": null,
+          "bias_model_minus_observed": -1.4816360097498813e-05,
+          "mae": 1.4816360097498813e-05,
+          "rmse": 1.4911089730638742e-05
+        }
+      }
+    }
+  },
+  "low_output_classification": {
+    "area": {
+      "threshold": "hybrid CF < 0.10",
+      "description": "low-output resource classification, not shortage validation",
+      "confusion": {
+        "true_positive": 292,
+        "true_negative": 291,
+        "false_positive": 109,
+        "false_negative": 28
+      },
+      "precision": 0.7281795511221946,
+      "recall": 0.9125,
+      "agreement": 0.8097222222222222,
+      "observed_runs": [
+        {
+          "start_utc": "2018-11-01 02:00:00",
+          "end_utc": "2018-11-01 02:00:00",
+          "duration_hours": 1
+        },
+        {
+          "start_utc": "2018-11-01 14:00:00",
+          "end_utc": "2018-11-01 17:00:00",
+          "duration_hours": 4
+        },
+        {
+          "start_utc": "2018-11-02 14:00:00",
+          "end_utc": "2018-11-03 08:00:00",
+          "duration_hours": 19
+        },
+        {
+          "start_utc": "2018-11-03 13:00:00",
+          "end_utc": "2018-11-05 08:00:00",
+          "duration_hours": 44
+        },
+        {
+          "start_utc": "2018-11-05 14:00:00",
+          "end_utc": "2018-11-05 17:00:00",
+          "duration_hours": 4
+        },
+        {
+          "start_utc": "2018-11-05 20:00:00",
+          "end_utc": "2018-11-06 06:00:00",
+          "duration_hours": 11
+        },
+        {
+          "start_utc": "2018-11-06 14:00:00",
+          "end_utc": "2018-11-06 16:00:00",
+          "duration_hours": 3
+        },
+        {
+          "start_utc": "2018-11-06 22:00:00",
+          "end_utc": "2018-11-07 01:00:00",
+          "duration_hours": 4
+        },
+        {
+          "start_utc": "2018-11-07 06:00:00",
+          "end_utc": "2018-11-07 06:00:00",
+          "duration_hours": 1
+        },
+        {
+          "start_utc": "2018-11-07 14:00:00",
+          "end_utc": "2018-11-07 16:00:00",
+          "duration_hours": 3
+        },
+        {
+          "start_utc": "2018-11-07 20:00:00",
+          "end_utc": "2018-11-08 07:00:00",
+          "duration_hours": 12
+        },
+        {
+          "start_utc": "2018-11-08 13:00:00",
+          "end_utc": "2018-11-09 07:00:00",
+          "duration_hours": 19
+        },
+        {
+          "start_utc": "2018-11-09 13:00:00",
+          "end_utc": "2018-11-09 18:00:00",
+          "duration_hours": 6
+        },
+        {
+          "start_utc": "2018-11-12 03:00:00",
+          "end_utc": "2018-11-12 06:00:00",
+          "duration_hours": 4
+        },
+        {
+          "start_utc": "2018-11-12 22:00:00",
+          "end_utc": "2018-11-13 04:00:00",
+          "duration_hours": 7
+        },
+        {
+          "start_utc": "2018-11-14 04:00:00",
+          "end_utc": "2018-11-14 07:00:00",
+          "duration_hours": 4
+        },
+        {
+          "start_utc": "2018-11-14 13:00:00",
+          "end_utc": "2018-11-15 09:00:00",
+          "duration_hours": 21
+        },
+        {
+          "start_utc": "2018-11-15 13:00:00",
+          "end_utc": "2018-11-15 17:00:00",
+          "duration_hours": 5
+        },
+        {
+          "start_utc": "2018-11-21 18:00:00",
+          "end_utc": "2018-11-26 03:00:00",
+          "duration_hours": 106
+        },
+        {
+          "start_utc": "2018-11-26 10:00:00",
+          "end_utc": "2018-11-28 00:00:00",
+          "duration_hours": 39
+        },
+        {
+          "start_utc": "2018-11-30 14:00:00",
+          "end_utc": "2018-11-30 16:00:00",
+          "duration_hours": 3
+        }
+      ],
+      "model_runs": [
+        {
+          "start_utc": "2018-11-01 00:00:00",
+          "end_utc": "2018-11-01 07:00:00",
+          "duration_hours": 8
+        },
+        {
+          "start_utc": "2018-11-01 14:00:00",
+          "end_utc": "2018-11-02 01:00:00",
+          "duration_hours": 12
+        },
+        {
+          "start_utc": "2018-11-02 05:00:00",
+          "end_utc": "2018-11-02 06:00:00",
+          "duration_hours": 2
+        },
+        {
+          "start_utc": "2018-11-02 14:00:00",
+          "end_utc": "2018-11-03 07:00:00",
+          "duration_hours": 18
+        },
+        {
+          "start_utc": "2018-11-03 14:00:00",
+          "end_utc": "2018-11-04 09:00:00",
+          "duration_hours": 20
+        },
+        {
+          "start_utc": "2018-11-04 13:00:00",
+          "end_utc": "2018-11-05 07:00:00",
+          "duration_hours": 19
+        },
+        {
+          "start_utc": "2018-11-05 15:00:00",
+          "end_utc": "2018-11-06 07:00:00",
+          "duration_hours": 17
+        },
+        {
+          "start_utc": "2018-11-06 15:00:00",
+          "end_utc": "2018-11-07 07:00:00",
+          "duration_hours": 17
+        },
+        {
+          "start_utc": "2018-11-07 14:00:00",
+          "end_utc": "2018-11-08 08:00:00",
+          "duration_hours": 19
+        },
+        {
+          "start_utc": "2018-11-08 13:00:00",
+          "end_utc": "2018-11-09 08:00:00",
+          "duration_hours": 20
+        },
+        {
+          "start_utc": "2018-11-09 14:00:00",
+          "end_utc": "2018-11-10 01:00:00",
+          "duration_hours": 12
+        },
+        {
+          "start_utc": "2018-11-11 21:00:00",
+          "end_utc": "2018-11-12 07:00:00",
+          "duration_hours": 11
+        },
+        {
+          "start_utc": "2018-11-12 15:00:00",
+          "end_utc": "2018-11-13 06:00:00",
+          "duration_hours": 16
+        },
+        {
+          "start_utc": "2018-11-13 22:00:00",
+          "end_utc": "2018-11-14 08:00:00",
+          "duration_hours": 11
+        },
+        {
+          "start_utc": "2018-11-14 13:00:00",
+          "end_utc": "2018-11-15 08:00:00",
+          "duration_hours": 20
+        },
+        {
+          "start_utc": "2018-11-15 14:00:00",
+          "end_utc": "2018-11-16 07:00:00",
+          "duration_hours": 18
+        },
+        {
+          "start_utc": "2018-11-16 15:00:00",
+          "end_utc": "2018-11-16 16:00:00",
+          "duration_hours": 2
+        },
+        {
+          "start_utc": "2018-11-17 01:00:00",
+          "end_utc": "2018-11-17 01:00:00",
+          "duration_hours": 1
+        },
+        {
+          "start_utc": "2018-11-17 21:00:00",
+          "end_utc": "2018-11-18 07:00:00",
+          "duration_hours": 11
+        },
+        {
+          "start_utc": "2018-11-21 16:00:00",
+          "end_utc": "2018-11-22 08:00:00",
+          "duration_hours": 17
+        },
+        {
+          "start_utc": "2018-11-22 13:00:00",
+          "end_utc": "2018-11-23 09:00:00",
+          "duration_hours": 21
+        },
+        {
+          "start_utc": "2018-11-23 13:00:00",
+          "end_utc": "2018-11-25 09:00:00",
+          "duration_hours": 45
+        },
+        {
+          "start_utc": "2018-11-25 13:00:00",
+          "end_utc": "2018-11-26 01:00:00",
+          "duration_hours": 13
+        },
+        {
+          "start_utc": "2018-11-26 14:00:00",
+          "end_utc": "2018-11-27 10:00:00",
+          "duration_hours": 21
+        },
+        {
+          "start_utc": "2018-11-27 12:00:00",
+          "end_utc": "2018-11-28 07:00:00",
+          "duration_hours": 20
+        },
+        {
+          "start_utc": "2018-11-30 14:00:00",
+          "end_utc": "2018-11-30 23:00:00",
+          "duration_hours": 10
+        }
+      ],
+      "observed_run_summary": {
+        "count": 21,
+        "longest_hours": 106
+      },
+      "model_run_summary": {
+        "count": 26,
+        "longest_hours": 45
+      }
+    },
+    "capacity": {
+      "threshold": "hybrid CF < 0.10",
+      "description": "low-output resource classification, not shortage validation",
+      "confusion": {
+        "true_positive": 258,
+        "true_negative": 332,
+        "false_positive": 68,
+        "false_negative": 62
+      },
+      "precision": 0.7914110429447853,
+      "recall": 0.80625,
+      "agreement": 0.8194444444444444,
+      "observed_runs": [
+        {
+          "start_utc": "2018-11-01 02:00:00",
+          "end_utc": "2018-11-01 02:00:00",
+          "duration_hours": 1
+        },
+        {
+          "start_utc": "2018-11-01 14:00:00",
+          "end_utc": "2018-11-01 17:00:00",
+          "duration_hours": 4
+        },
+        {
+          "start_utc": "2018-11-02 14:00:00",
+          "end_utc": "2018-11-03 08:00:00",
+          "duration_hours": 19
+        },
+        {
+          "start_utc": "2018-11-03 13:00:00",
+          "end_utc": "2018-11-05 08:00:00",
+          "duration_hours": 44
+        },
+        {
+          "start_utc": "2018-11-05 14:00:00",
+          "end_utc": "2018-11-05 17:00:00",
+          "duration_hours": 4
+        },
+        {
+          "start_utc": "2018-11-05 20:00:00",
+          "end_utc": "2018-11-06 06:00:00",
+          "duration_hours": 11
+        },
+        {
+          "start_utc": "2018-11-06 14:00:00",
+          "end_utc": "2018-11-06 16:00:00",
+          "duration_hours": 3
+        },
+        {
+          "start_utc": "2018-11-06 22:00:00",
+          "end_utc": "2018-11-07 01:00:00",
+          "duration_hours": 4
+        },
+        {
+          "start_utc": "2018-11-07 06:00:00",
+          "end_utc": "2018-11-07 06:00:00",
+          "duration_hours": 1
+        },
+        {
+          "start_utc": "2018-11-07 14:00:00",
+          "end_utc": "2018-11-07 16:00:00",
+          "duration_hours": 3
+        },
+        {
+          "start_utc": "2018-11-07 20:00:00",
+          "end_utc": "2018-11-08 07:00:00",
+          "duration_hours": 12
+        },
+        {
+          "start_utc": "2018-11-08 13:00:00",
+          "end_utc": "2018-11-09 07:00:00",
+          "duration_hours": 19
+        },
+        {
+          "start_utc": "2018-11-09 13:00:00",
+          "end_utc": "2018-11-09 18:00:00",
+          "duration_hours": 6
+        },
+        {
+          "start_utc": "2018-11-12 03:00:00",
+          "end_utc": "2018-11-12 06:00:00",
+          "duration_hours": 4
+        },
+        {
+          "start_utc": "2018-11-12 22:00:00",
+          "end_utc": "2018-11-13 04:00:00",
+          "duration_hours": 7
+        },
+        {
+          "start_utc": "2018-11-14 04:00:00",
+          "end_utc": "2018-11-14 07:00:00",
+          "duration_hours": 4
+        },
+        {
+          "start_utc": "2018-11-14 13:00:00",
+          "end_utc": "2018-11-15 09:00:00",
+          "duration_hours": 21
+        },
+        {
+          "start_utc": "2018-11-15 13:00:00",
+          "end_utc": "2018-11-15 17:00:00",
+          "duration_hours": 5
+        },
+        {
+          "start_utc": "2018-11-21 18:00:00",
+          "end_utc": "2018-11-26 03:00:00",
+          "duration_hours": 106
+        },
+        {
+          "start_utc": "2018-11-26 10:00:00",
+          "end_utc": "2018-11-28 00:00:00",
+          "duration_hours": 39
+        },
+        {
+          "start_utc": "2018-11-30 14:00:00",
+          "end_utc": "2018-11-30 16:00:00",
+          "duration_hours": 3
+        }
+      ],
+      "model_runs": [
+        {
+          "start_utc": "2018-11-01 00:00:00",
+          "end_utc": "2018-11-01 07:00:00",
+          "duration_hours": 8
+        },
+        {
+          "start_utc": "2018-11-01 14:00:00",
+          "end_utc": "2018-11-01 19:00:00",
+          "duration_hours": 6
+        },
+        {
+          "start_utc": "2018-11-02 15:00:00",
+          "end_utc": "2018-11-03 08:00:00",
+          "duration_hours": 18
+        },
+        {
+          "start_utc": "2018-11-03 14:00:00",
+          "end_utc": "2018-11-04 08:00:00",
+          "duration_hours": 19
+        },
+        {
+          "start_utc": "2018-11-04 14:00:00",
+          "end_utc": "2018-11-05 06:00:00",
+          "duration_hours": 17
+        },
+        {
+          "start_utc": "2018-11-05 15:00:00",
+          "end_utc": "2018-11-06 07:00:00",
+          "duration_hours": 17
+        },
+        {
+          "start_utc": "2018-11-06 14:00:00",
+          "end_utc": "2018-11-07 07:00:00",
+          "duration_hours": 18
+        },
+        {
+          "start_utc": "2018-11-07 15:00:00",
+          "end_utc": "2018-11-08 08:00:00",
+          "duration_hours": 18
+        },
+        {
+          "start_utc": "2018-11-08 13:00:00",
+          "end_utc": "2018-11-09 07:00:00",
+          "duration_hours": 19
+        },
+        {
+          "start_utc": "2018-11-09 15:00:00",
+          "end_utc": "2018-11-09 19:00:00",
+          "duration_hours": 5
+        },
+        {
+          "start_utc": "2018-11-11 23:00:00",
+          "end_utc": "2018-11-12 07:00:00",
+          "duration_hours": 9
+        },
+        {
+          "start_utc": "2018-11-12 18:00:00",
+          "end_utc": "2018-11-13 04:00:00",
+          "duration_hours": 11
+        },
+        {
+          "start_utc": "2018-11-14 01:00:00",
+          "end_utc": "2018-11-14 07:00:00",
+          "duration_hours": 7
+        },
+        {
+          "start_utc": "2018-11-14 14:00:00",
+          "end_utc": "2018-11-15 08:00:00",
+          "duration_hours": 19
+        },
+        {
+          "start_utc": "2018-11-15 14:00:00",
+          "end_utc": "2018-11-16 07:00:00",
+          "duration_hours": 18
+        },
+        {
+          "start_utc": "2018-11-17 01:00:00",
+          "end_utc": "2018-11-17 01:00:00",
+          "duration_hours": 1
+        },
+        {
+          "start_utc": "2018-11-17 20:00:00",
+          "end_utc": "2018-11-18 07:00:00",
+          "duration_hours": 12
+        },
+        {
+          "start_utc": "2018-11-22 01:00:00",
+          "end_utc": "2018-11-22 07:00:00",
+          "duration_hours": 7
+        },
+        {
+          "start_utc": "2018-11-22 15:00:00",
+          "end_utc": "2018-11-23 08:00:00",
+          "duration_hours": 18
+        },
+        {
+          "start_utc": "2018-11-23 13:00:00",
+          "end_utc": "2018-11-24 10:00:00",
+          "duration_hours": 22
+        },
+        {
+          "start_utc": "2018-11-24 13:00:00",
+          "end_utc": "2018-11-25 08:00:00",
+          "duration_hours": 20
+        },
+        {
+          "start_utc": "2018-11-25 14:00:00",
+          "end_utc": "2018-11-25 17:00:00",
+          "duration_hours": 4
+        },
+        {
+          "start_utc": "2018-11-26 15:00:00",
+          "end_utc": "2018-11-27 09:00:00",
+          "duration_hours": 19
+        },
+        {
+          "start_utc": "2018-11-27 13:00:00",
+          "end_utc": "2018-11-28 02:00:00",
+          "duration_hours": 14
+        }
+      ],
+      "observed_run_summary": {
+        "count": 21,
+        "longest_hours": 106
+      },
+      "model_run_summary": {
+        "count": 24,
+        "longest_hours": 22
+      }
+    }
+  },
+  "event_window_2018_11_01_through_09": {
+    "area": {
+      "wind": {
+        "n": 216,
+        "observed_mean": 0.14093156268605714,
+        "model_mean": 0.0920874158327865,
+        "correlation": 0.487561828643829,
+        "bias_model_minus_observed": -0.04884414685327062,
+        "mae": 0.06765998598309048,
+        "rmse": 0.07938204812699544
+      },
+      "solar": {
+        "n": 216,
+        "observed_mean": 0.0461918957299062,
+        "model_mean": 0.0538529512814669,
+        "correlation": 0.9784539241891389,
+        "bias_model_minus_observed": 0.007661055551560703,
+        "mae": 0.01019226816250124,
+        "rmse": 0.01994601848137239
+      },
+      "hybrid": {
+        "n": 216,
+        "observed_mean": 0.09356172920798167,
+        "model_mean": 0.0729701835571267,
+        "correlation": 0.7390508187379791,
+        "bias_model_minus_observed": -0.020591545650854956,
+        "mae": 0.03676192865493352,
+        "rmse": 0.04212012430181633
+      }
+    },
+    "capacity": {
+      "wind": {
+        "n": 216,
+        "observed_mean": 0.14093156268605714,
+        "model_mean": 0.12657426166705515,
+        "correlation": 0.5506213312510209,
+        "bias_model_minus_observed": -0.014357301019001966,
+        "mae": 0.059031611758563494,
+        "rmse": 0.07019094842502764
+      },
+      "solar": {
+        "n": 216,
+        "observed_mean": 0.0461918957299062,
+        "model_mean": 0.05453970337045497,
+        "correlation": 0.9793200534302579,
+        "bias_model_minus_observed": 0.008347807640548767,
+        "mae": 0.010115621366565672,
+        "rmse": 0.02034574878837125
+      },
+      "hybrid": {
+        "n": 216,
+        "observed_mean": 0.09356172920798167,
+        "model_mean": 0.09055698251875505,
+        "correlation": 0.811016792284081,
+        "bias_model_minus_observed": -0.003004746689226598,
+        "mae": 0.03302548249861987,
+        "rmse": 0.0393832457193496
+      }
+    }
+  },
+  "data_leakage": "None: no fitting, scaling, calibration, or threshold tuning used observed data.",
+  "caveats": [
+    "Observed hybrid is hypothetical equal-rated-capacity CF, not actual combined generation.",
+    "Static end-2018 capacity denominators slightly understate observed CF when capacity was lower."
+  ]
+}
